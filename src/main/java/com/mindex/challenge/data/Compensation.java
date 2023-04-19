@@ -8,6 +8,8 @@ public class Compensation {
     private String compensationId;
     private Employee employee;
     private String employeeId;
+    private BigDecimal salary;
+    private LocalDate effectiveDate;
 
     public String getEmployeeId() {
         return this.employeeId;
@@ -16,8 +18,7 @@ public class Compensation {
     public void setEmployeeId(String employeeId) {
         this.employeeId = employeeId;
     }
-    private BigDecimal salary;
-    private LocalDate effectiveDate;
+
 
     public Employee getEmployee() {
         return employee;

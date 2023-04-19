@@ -10,3 +10,8 @@ I tested this well and it definitely persists the query.  Gives the full employe
 ### Other Notes
 
 The sample data wasn't modified except to add one employee, myself to the end.  
+
+### Testing
+Tests in ChallengeApplicationTests class.  
+
+### Put some images of working code in the top level folder

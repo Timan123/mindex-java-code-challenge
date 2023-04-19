@@ -21,6 +21,7 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
     @Autowired
     private EmployeeService employeeService;
 
+    // uses recursion to get the whole reporting structure tree
     @Override
     public ReportingStructure reportingStructure(String id) {
         
@@ -42,7 +43,8 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
 
             }
         }
-
+        // uses pipe characters to both construct the reporting structure tree string
+        // and count the number of reports with the same code
         int reportCount = (int) structureBuild.chars().filter(ch -> ch == '|').count();
 
         structureBuild = structureBuild.replaceAll("\\|","");
@@ -57,10 +59,12 @@ public class ReportingStructureServiceImpl implements ReportingStructureService 
 
     }
 
+    // recursive method, calls itself  
     private String traverse(Employee employee) {
 
         String structureBuild = "";
 
+        // represent employees in the structure with just first and last name
         structureBuild += employee.getFirstName() + " " + employee.getLastName() + "|\n";
 
         ArrayList<Employee> directs = (ArrayList<Employee>) employee.getDirectReports();
